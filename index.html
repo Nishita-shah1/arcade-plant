@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Cozy Timer</title>
+
+  <!-- 🎮 Pixel Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Lottie (optional if used) -->
+  <script
+    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js"
+    type="module"
+  ></script>
+</head>
+<body>
+
+  <div class="page-background">
+
+    <div class="timer-box">
+
+      <div class="plant-area">
+        <p class="plant-text">🌿 Grow Your Plant with Focus Time</p>
+        <div id="sprout-status" class="sprout-text">Small Sprout 🌱</div>
+      </div>
+
+      <div class="gif-center">
+        <div id="coffee-visual">
+          <img src="animations/pixel-coffee.gif" alt="Pixel Coffee" class="coffee-gif" />
+        </div>
+
+        <div id="plant-visual-container" style="display: none;">
+          <video
+            id="plant-video"
+            src="animations/plant-growth.mp4"
+            loop
+            muted
+            playsinline
+            style="width: 220px; height: 220px; object-fit: contain;"
+          ></video>
+        </div>
+      </div>
+
+      <div id="timer-container" class="timer-content">
+        <div id="selection-state">
+          <div class="separator"></div>
+          <p class="title">⏰ Choose your focus time</p>
+
+          <div class="duration-buttons">
+            <a href="#" class="btn" onclick="startTimer(5)">5 min</a>
+            <a href="#" class="btn" onclick="startTimer(10)">10 min</a>
+            <a href="#" class="btn" onclick="startTimer(15)">15 min</a>
+            <a href="#" class="btn" onclick="startTimer(30)">30 min</a>
+            <a href="#" class="btn" onclick="startTimer(60)">60 min</a>
+          </div>
+
+          <div class="custom-input-group">
+            <input type="number" id="custom-minutes" placeholder="Custom (min)" class="custom-input" />
+            <a href="#" class="btn-start" onclick="startCustomTimer()">Start</a>
+          </div>
+        </div>
+
+        <div id="running-state" style="display: none;">
+          <div class="running-info">
+            <p id="status-text" class="status-text">Growing your Sunflower... 🌿</p>
+            <p id="time-display" class="time-display">00:00 left</p>
+          </div>
+
+          <div class="progress-bar-track">
+            <div id="progress-bar" class="progress-bar-fill"></div>
+          </div>
+
+          <button class="stop-btn" onclick="stopTimer()">Stop</button>
+        </div>
+      </div>
+
+      <!-- 🐾 Cat Animation -->
+      <div class="cat-track">
+        <img src="animations/pixel2-cat-walk.gif" alt="Walking Cat" class="cat-walk-gif" />
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
